@@ -19,15 +19,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '--o4k0!jqz3a)3)c%gv7pam*-c8h3qt*aychbi-&c6-gy7&3rs'
+# SECRET_KEY = '49de1f5e0aae16a5143c0dcb1a3768d25999229d4527dee6'
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '--o4k0!jqz3a)3)c%gv7pam*-c8h3qt*aychbi-&c6-gy7&3rs')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '49de1f5e0aae16a5143c0dcb1a3768d25999229d4527dee6')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ikigear.herokuapp.com']
 
 # Application definition
 
