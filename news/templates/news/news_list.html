@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block search %}
+{#    {{ block.super }}#}
+    <section class="mt-3 search">
+        <div class="container pt-3 pb-3 bg-l" style="border-top: 2px #000 solid;border-right: 2px #000 solid;border-left: 2px #000 solid;">
+            <div class="row">
+
+                    <form class="form-inline" action="{% url 'news_list_url' %} " style="width: 100%">
+                    <div class="col-lg-10 form-group">
+
+                        <input class="form-control-lg" type="text" placeholder="Поиск по сайту" name="search"
+                               style="border: 2px solid">
+
+                    </div>
+                    <div class="col-lg-2 ">
+                        <button type="submit" class="btn btn-outline-dark btn-lg " style="width: 100%; border: 2px solid;">
+                            Поиск
+                        </button>
+                    </div>
+                    </form>
+
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block content %}
+    {% for item in posts%}
+
+            <div class="col-lg-4 mt-4">
+                <a href="{% url 'news_detail_url' slug=item.slug %}"><div class="img-wrap"><img src="{{ item.image.url }}" alt="Preview" class="img-fluid shadow-lg"></div></a>
+            </div>
+
+            <div class="col-lg-8  mb-3 mt-4 " >
+                <a href="{% url 'news_detail_url' slug=item.slug %}" style="color:#000;text-decoration: none;"><h5 class="txt_base shadow-sm rounded mr-2" style="padding: 11px; margin: 0">{{ item.body|safe|truncatewords_html:50  }}</h5></a>
+            </div>
+{#        <div class="col-lg-4 mt-5 mb-5">#}
+{#            <div class="descr-wrap">#}
+{#                <a href="{% url 'news_detail_url' slug=item.slug %}"><span class="descr">{{ item.title }}</span><img src="{{ item.image.url }}" alt="" ></a>#}
+{#            </div>#}
+{#        </div>#}
+    {% endfor %}
+
+{% endblock %}

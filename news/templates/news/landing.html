@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block first_disp %}
+    <section class="mt-4">
+
+        <div class="container bor">
+            <div class="row">
+                <div class="col-12" style="background-color: #791106; padding: 0">
+
+                    <img src="{% static 'img/kar1.jpg' %}" class="img-fluid " alt="Адаптивные изображения">
+
+                    <div id="rectangle">
+                        <p>Наши последние видео:</p>
+                    </div>
+                    <div class="owl-carousel owl-theme" id="carousel1">
+
+                        <div><div class="slider ">Видео<p>1</p></div></div>
+                        <div><div class="slider ">Видео<p>2</p></div></div>
+                        <div><div class="slider ">Видео<p>3</p></div></div>
+                        <div><div class="slider ">Видео<p>4</p></div></div>
+                        <div><div class="slider ">Видео<p>5</p></div></div>
+                        <div><div class="slider ">Видео<p>6</p></div></div>
+                        <div><div class="slider ">Видео<p>7</p></div></div>
+                        <div><div class="slider ">Видео<p>8</p></div></div>
+                        <div><div class="slider ">Видео<p>9</p></div></div>
+                        <div><div class="slider ">Видео<p>10</p></div></div>
+                        <div><div class="slider ">Видео<p>11</p></div></div>
+                        <div><div class="slider ">Видео<p>12</p></div></div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="live mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-live">
+                    <p>Не забудьте так же про наш лайв канал:</p>
+                </div>
+                 <div class="col-12 logo-live" >
+
+                    <h1> <a href="#" style="text-decoration: none; color: #09ffed;">IKIGEAR Live</a><i class="fa fa-circle" aria-hidden="true"></i></h1>
+    {#                    <p class="text-center">#}
+    {#                        IKIGEAR Live#}
+    {#                        #}
+    {#                    </p>#}
+
+
+
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <div class="container bg-l " style="border: 2px solid #000; padding: 30px">
+            <div class="row">
+                <div class="col-12">
+                    {% for review in reviews|slice:":1" %}
+
+                        <h1 class="mark_title">Наши последние обзоры:</h1>
+                        <div class="mark_wrap">
+                            <span class="desc_mark">{{ review.title }}</span>
+                            <a href="{% url 'review_detail_url' slug=review.slug %}"><img src="{{ review.image.url }}" class="img-wrap img-fluid" alt="Исходник" ></a>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                    {% for review in reviews|slice:"1:4" %}
+                        <div class="col-md-4 mt-4">
+                        <div class="mark_wrap">
+                            <span class="desc_mark_mini">{{ review.title }}</span>
+                            <a href="{% url 'review_detail_url' slug=review.slug %}"><img src="{{ review.image.url }}" class="img-wrap img-fluid" alt="Исходник" style="border: solid #000 3px"></a>
+                        </div>
+
+                        </div>
+                    {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block search %}
+{% endblock %}
+{% block content %}
+        <div class="col-12 mt-4">
+            <h1 class="ml-2">Последнее из новостей:</h1>
+        </div>
+    {% for post in posts|slice:":3" %}
+        <div class="col-12 ">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a href="#" class="linkdata">{{ post.author }}</a>
+                    <p class="d-inline">{{ post.date_posted|date:"G:i, d F, Y" }}</p>
+                </div>
+
+                <a href="{% url 'news_detail_url' slug=post.slug %}"><h1 class="post-title">{{ post.title }}</h1></a>
+                <a href="{% url 'news_detail_url' slug=post.slug %}"><img src="{{ post.image.url }}" class="img-wrap img-fluid" alt="Исходник"></a>
+                <div class="inl txt_sz_20 mt-4"> {{ post.body|safe|truncatewords_html:20 }}<a href="{% url 'news_detail_url' slug=post.slug %}"><i class="fa fa-chevron-right" aria-hidden="true" style="color: red; font-size: 14px;"></i></a> </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+from django.shortcuts import render
+from django.shortcuts import get_object_or_404
+from django.db.models import Q
+from .models import *
+
+
+def landing(request):
+    posts = Post.objects.all()
+    reviews = Review.objects.all()
+    return render(request, 'news/landing.html', context={'posts': posts, 'reviews': reviews})
+
+
+def news_list(request):
+    search_query = request.GET.get('search', '')
+
+    if search_query:
+        posts = Post.objects.filter(Q(title__icontains=search_query) | Q(body__icontains=search_query))
+    else:
+        posts = Post.objects.all()
+    return render(request, 'news/news_list.html', context={'posts': posts})
+
+
+def news_detail(request, slug):
+    post = get_object_or_404(Post, slug__iexact=slug)
+    return render(request, 'news/news_detail.html', context={'post': post})
+
+
+def reviews_list(request):
+    search_query = request.GET.get('search', '')
+
+    if search_query:
+        reviews = Review.objects.filter(Q(title__icontains=search_query) | Q(body__icontains=search_query))
+    else:
+        reviews = Review.objects.all()
+    return render(request, 'reviews/reviews_list.html', context={'reviews': reviews})
+
+
+def review_detail(request, slug):
+    review = get_object_or_404(Review, slug__iexact=slug)
+    return render(request, 'reviews/review_detail.html', context={'review': review})

@@ -1,0 +1,208 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru/en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Owl -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- fontawesome icons -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/news_list_style.css' %}">
+
+
+
+        <title>{% block title %}IKIGEAR{% endblock %}</title>
+
+</head>
+<body>
+<header style="background: #000;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 ind-menu">
+                <nav class="navbar navbar-expand-lg ">
+                    <a class="navbar-brand" href="{% url 'landing_url' %}"> <img src="{% static 'img/logo.jpg' %}" alt="" class="logo">Ikigear</a>
+
+                    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars" aria-hidden="true" style="font-size:30px; color: #FFF"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+
+                            <li class="nav-item active nav-news">
+                                <a class="nav-link" href="{% url 'news_list_url' %}">Новости</a>
+                            </li>
+
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'reviews_list_url' %}">Обзоры</a>
+                            </li>
+
+                            <li class="nav-item active">
+                                <a class="nav-link" href="https://www.youtube.com/channel/UCJymPbg-0_yc-63wqc0WtIQ/videos">Видео</a>
+                            </li>
+
+
+                            <li class="nav-item active dropdown last_item">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Прочее
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Live</a>
+                                    <a class="dropdown-item" href="#">Мерч</a>
+                                </div>
+                            </li>
+
+
+
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+{% block first_disp %}
+{% endblock %}
+
+{% block search %}
+    <section class="mt-3 search">
+        <div class="container pt-3 pb-3 bg-l" style="border-top: 2px #000 solid;border-right: 2px #000 solid;border-left: 2px #000 solid;">
+            <div class="row">
+
+                    <form class="form-inline" action="{% url 'news_list_url' %} " style="width: 100%">
+                    <div class="col-lg-10 form-group">
+
+                        <input class="form-control-lg" type="text" placeholder="Поиск по сайту" name="search"
+                               style="border: 2px solid">
+
+                    </div>
+                    <div class="col-lg-2 ">
+                        <button type="submit" class="btn btn-outline-dark btn-lg " style="width: 100%; border: 2px solid;">
+                            Поиск
+                        </button>
+                    </div>
+                    </form>
+
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+    <section>
+        <div class="container bg-l " style="border: 2px #000 solid;">
+            <div class="row">
+
+                    {% block content %}
+                        <div class="col-12">
+                            <div class="media-body">
+                              <div class="article-metadata">
+                                <a href="#" class="linkdata">User</a>
+                                <p class="d-inline">14:49, 23 August, 2019</p>
+                              </div>
+
+                              <h1 class="post-title">"Он", "Она", или "Оно"? </h1>
+                              <div class="img-warp "><img src="{% static 'img/fl4k1.jpg' %}" class="img-fluid" alt="Исходник"></div>
+                              <p class="post-text mt-3">Борда ещё не вышла, а один из персонажей уже превратилОСЬ в блудхунда из ареха.
+                                  Более того на официальном форуме игры теперь можно наполучать
+                                  за использование местоимений он или она по отношению к нему… <a href="http://natribu.org/">
+                                      <i class="fa fa-arrow-right" aria-hidden="true" style="color: red"></i></a></p>
+                            </div>
+                        </div>
+                    {% endblock %}
+
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 foot">
+                    <p>IKIGEAR 2019 ©</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<!-- OWL -->
+
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+
+<script>
+    $(document).ready(function () {
+
+        $("#carousel1").owlCarousel({
+            items: 2,
+            loop: true,
+            nav: false,
+            rewind: true,
+            autoplay: true,
+            slideBy: 4,
+            autoplayHoverPause: true,
+
+
+            responsive: {
+
+                540: {
+                    items: 2
+                },
+                720: {
+                    items: 3
+                },
+
+                993: {
+                    items: 4
+                }
+            }
+        });
+
+    });
+</script>
+</body>
+</html>
