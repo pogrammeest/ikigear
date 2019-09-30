@@ -133,9 +133,9 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 ''''''
-AWS_ACCESS_KEY_ID = 'AKIA3J2MZ63BIU2IYET4'  # 'AKIA3J2MZ63BEERJXRV6'#os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = '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'  # '62Yjj6QiRH8NZuLLdJmfFiS1m0cHG/d325hEnVSX'#os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = 'ikigear-files'  # 'ikigear-files'#os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
 AWS_S3_REGION_NAME = 'eu-north-1'#'eu-north-1'
 AWS_S3_ENDPOINT_URL = 'https://s3.eu-north-1.amazonaws.com'
