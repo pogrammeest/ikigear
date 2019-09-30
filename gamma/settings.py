@@ -25,11 +25,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '49de1f5e0aae16a5143c0dcb1a3768
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+DEBUG = bool(os.environ.get('DEBUG_VALUE') == 'True')
 
-ALLOWED_HOSTS = ['ikigear.herokuapp.com']
+ALLOWED_HOSTS = []  # 'ikigear.herokuapp.com'
 
 # Application definition
+
 
 INSTALLED_APPS = [
     'news.apps.NewsConfig',
@@ -40,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_summernote',
+    'storages',
+    's3direct',
+
+
 ]
 
 MIDDLEWARE = [
@@ -68,6 +73,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+
     },
 ]
 
@@ -126,3 +132,26 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+''''''
+AWS_ACCESS_KEY_ID = 'AKIA3J2MZ63BIU2IYET4'  # 'AKIA3J2MZ63BEERJXRV6'#os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = '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'  # '62Yjj6QiRH8NZuLLdJmfFiS1m0cHG/d325hEnVSX'#os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'ikigear-files'  # 'ikigear-files'#os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+AWS_S3_REGION_NAME = 'eu-north-1'#'eu-north-1'
+AWS_S3_ENDPOINT_URL = 'https://s3.eu-north-1.amazonaws.com'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+S3DIRECT_DESTINATIONS = {
+    'post_destination': {
+        'key': 'static/posts/',
+
+    },
+    'review_destination': {
+        'key': 'static/reviews/',
+
+    }
+}
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

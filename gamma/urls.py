@@ -18,10 +18,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('news.urls')),
     path('summernote/', include('django_summernote.urls')),
+    path('s3direct/', include('s3direct.urls')),
+
 ]
 
 if settings.DEBUG:

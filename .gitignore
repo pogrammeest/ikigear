@@ -126,3 +126,5 @@ dmypy.json
 
 .idea
 __pycache__
+
+credentials.py

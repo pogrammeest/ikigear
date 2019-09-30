@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from s3direct.fields import S3DirectField
 
 from django.utils.text import slugify
 from time import time
@@ -26,7 +27,8 @@ class Post(models.Model):
     body = models.TextField(blank=True, db_index=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='post_pics')
+    #image = models.ImageField(default='default.jpg', upload_to='post_pics')
+    image =S3DirectField(dest='post_destination')
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -46,7 +48,7 @@ class Review(models.Model):
     body = models.TextField(blank=True, db_index=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='review_pics')
+    image =S3DirectField(dest='review_destination')
 
     def save(self, *args, **kwargs):
         if not self.slug:

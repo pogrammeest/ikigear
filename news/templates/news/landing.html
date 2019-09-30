@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block first_disp %}
     <section class="mt-4">
 
         <div class="container bor">
             <div class="row">
+
                 <div class="col-12" style="background-color: #791106; padding: 0">
 
                     <img src="{% static 'img/kar1.jpg' %}" class="img-fluid " alt="Адаптивные изображения">
@@ -66,7 +66,7 @@
                         <h1 class="mark_title">Наши последние обзоры:</h1>
                         <div class="mark_wrap">
                             <span class="desc_mark">{{ review.title }}</span>
-                            <a href="{% url 'review_detail_url' slug=review.slug %}"><img src="{{ review.image.url }}" class="img-wrap img-fluid" alt="Исходник" ></a>
+                            <a href="{% url 'review_detail_url' slug=review.slug %}"><img src="{{ review.image }}" class="img-wrap img-fluid" alt="Исходник" ></a>
                         </div>
                     {% endfor %}
                 </div>
@@ -75,7 +75,7 @@
                         <div class="col-md-4 mt-4">
                         <div class="mark_wrap">
                             <span class="desc_mark_mini">{{ review.title }}</span>
-                            <a href="{% url 'review_detail_url' slug=review.slug %}"><img src="{{ review.image.url }}" class="img-wrap img-fluid" alt="Исходник" style="border: solid #000 3px"></a>
+                            <a href="{% url 'review_detail_url' slug=review.slug %}"><img src="{{ review.image }}" class="img-wrap img-fluid" alt="Исходник" style="border: solid #000 3px"></a>
                         </div>
 
                         </div>
@@ -101,7 +101,7 @@
                 </div>
 
                 <a href="{% url 'news_detail_url' slug=post.slug %}"><h1 class="post-title">{{ post.title }}</h1></a>
-                <a href="{% url 'news_detail_url' slug=post.slug %}"><img src="{{ post.image.url }}" class="img-wrap img-fluid" alt="Исходник"></a>
+                <a href="{% url 'news_detail_url' slug=post.slug %}"><img src="{{ post.image }}" class="img-wrap img-fluid" alt="Исходник"></a>
                 <div class="inl txt_sz_20 mt-4"> {{ post.body|safe|truncatewords_html:20 }}<a href="{% url 'news_detail_url' slug=post.slug %}"><i class="fa fa-chevron-right" aria-hidden="true" style="color: red; font-size: 14px;"></i></a> </div>
             </div>
         </div>

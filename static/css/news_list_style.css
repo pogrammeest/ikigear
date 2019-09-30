@@ -33,6 +33,9 @@
     text-align: center !important;
     opacity: 0;
 }
+.descr-wrap span{
+    color: #FFF !important;
+}
 
 .descr-wrap a p {
     margin: 0 !important;
