@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '49de1f5e0aae16a5143c0dcb1a3768
 # DEBUG = True
 DEBUG = bool(os.environ.get('DEBUG_VALUE') == 'True')
 
-ALLOWED_HOSTS = []  # 'ikigear.herokuapp.com'
+ALLOWED_HOSTS = ['ikigear.herokuapp.com']
 
 # Application definition
 
