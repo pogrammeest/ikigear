@@ -27,7 +27,7 @@
 {% endblock %}
 {% block content %}
     {% for item in reviews %}
-        <div class="col-md-4 mt-5 mb-5">
+        <div class="col-md-4 mt-3 mb-3">
             <div class="descr-wrap">
                 <a href="{% url 'review_detail_url' slug=item.slug %}"><span class="descr">{{ item.title }}
                    </span><img src="{{ item.image }}" alt="" > <div class="inl">{{ item.body|safe|truncatewords_html:5}}</div></a>
