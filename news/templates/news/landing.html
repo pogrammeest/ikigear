@@ -63,7 +63,7 @@
                 <div class="col-12">
                     {% for review in reviews|slice:":1" %}
 
-                        <h1 class="mark_title">Наши последние обзоры:</h1>
+                        <h1 class="mark_title last_news">Наши последние обзоры:</h1>
                         <div class="mark_wrap">
                             <span class="desc_mark">{{ review.title }}</span>
                             <a href="{% url 'review_detail_url' slug=review.slug %}"><img src="{{ review.image }}" class="img-wrap img-fluid" alt="Исходник" ></a>
@@ -90,7 +90,7 @@
 {% endblock %}
 {% block content %}
         <div class="col-12 mt-4">
-            <h1 class="ml-2">Последнее из новостей:</h1>
+            <h1 class="ml-2 last_news">Последнее из новостей:</h1>
         </div>
     {% for post in posts|slice:":3" %}
         <div class="col-12 ">
@@ -102,7 +102,7 @@
 
                 <a href="{% url 'news_detail_url' slug=post.slug %}"><h1 class="post-title">{{ post.title }}</h1></a>
                 <a href="{% url 'news_detail_url' slug=post.slug %}"><img src="{{ post.image }}" class="img-wrap img-fluid" alt="Исходник"></a>
-                <div class="inl txt_sz_20 mt-4"> {{ post.body|safe|truncatewords_html:20 }}<a href="{% url 'news_detail_url' slug=post.slug %}"><i class="fa fa-chevron-right" aria-hidden="true" style="color: red; font-size: 14px;"></i></a> </div>
+                <div class="inl txt_body mt-4"> {{ post.body|safe|truncatewords_html:20 }}<a href="{% url 'news_detail_url' slug=post.slug %}"><i class="fa fa-chevron-right" aria-hidden="true" style="color: red; font-size: 14px;"></i></a> </div>
             </div>
         </div>
     {% endfor %}

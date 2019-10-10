@@ -256,6 +256,7 @@ section {
     margin-top: 10px;
     font-weight: bold;
     color: rgb(197, 198, 199);
+    font-size: 16px;
 }
 
 .article-metadata .linkdata {
@@ -266,8 +267,32 @@ section {
 .article-metadata a:hover {
     color: black;
 }
-.txt_sz_20 p span{
-    font-size: 20px !important;
+.txt_body p span, .txt_body p{
+    font-size: 18px !important;
+}
+
+
+.last_news{
+    font-size: 50px !important;
+	/*color: #000;*/
+	/*text-shadow:*/
+	/*	-0   -1px 3px #F4F0C1,*/
+	/*	 0   -1px 3px #F4F0C1,*/
+	/*	-0    1px 3px #F4F0C1,*/
+	/*	 0    1px 3px #F4F0C1,*/
+	/*	-1px -0   3px #F4F0C1,*/
+	/*	 1px -0   3px #F4F0C1,*/
+	/*	-1px  0   3px #F4F0C1,*/
+	/*	 1px  0   3px #F4F0C1,*/
+	/*	-1px -1px 3px #F4F0C1,*/
+	/*	 1px -1px 3px #F4F0C1,*/
+	/*	-1px  1px 3px #F4F0C1,*/
+	/*	 1px  1px 3px #F4F0C1,*/
+	/*	-1px -1px 3px #F4F0C1,*/
+	/*	 1px -1px 3px #F4F0C1,*/
+	/*	-1px  1px 3px #F4F0C1,*/
+	/*	 1px  1px 3px #F4F0C1;*/
+
 }
 .txt_base p span{
      font-family: 'Istok Web', sans-serif !important;
@@ -361,13 +386,25 @@ section {
         top: 3px;
         font-size: 17px;
     }
+
     .live .container .row .text-live p {
         font-size: 18px;
     }
-    .mark_title{
+    .mark_title {
         font-size: 30px;
     }
-
+    .txt_body p span,.txt_body p{
+        font-size: 16px !important;
+    }
+    .post-title{
+        font-size: 30px !important;
+        font-weight: bold!important;;
+    }
+    .last_news{
+        font-size: 29px !important;
+        font-weight: bold!important;;
+    }
+}
 /*Extra Small Devices, Phones*/
 @media only screen and (max-width: 480px) {
     .logo-live h1 i {
@@ -383,7 +420,18 @@ section {
     .desc_mark, .desc_mark_mini{
         font-size: 22px;
     }
-
+    .last_news{
+        font-size: 22px !important;
+    }
+    .article-metadata{
+        font-size: 12px;
+    }
+    .post-title{
+        font-size: 20px !important;
+    }
+    .txt_body p span, .txt_body p{
+        font-size: 13px !important;
+    }
 }
 
 @media only screen and (max-width: 380px) {
@@ -411,5 +459,4 @@ section {
 
         font-size: 20px;
     }
-}
 }
