@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-lg-8  mb-3 mt-4 " >
-                <a href="{% url 'news_detail_url' slug=item.slug %}" style="color:#000;text-decoration: none;"><p class="txt_base txt_body shadow-sm rounded mr-2" style="padding: 11px; margin: 0">{{ item.body|safe|truncatewords_html:50  }}</p></a>
+                <a href="{% url 'news_detail_url' slug=item.slug %}" style="color:#000;text-decoration: none;"><h5 class="txt_base txt_body shadow-sm rounded mr-2" style="padding: 11px; margin: 0">{{ item.body|safe|truncatewords_html:50  }}</h5></a>
             </div>
 {#        <div class="col-lg-4 mt-5 mb-5">#}
 {#            <div class="descr-wrap">#}
