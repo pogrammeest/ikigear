@@ -7,5 +7,6 @@ urlpatterns = [
     path('news/<str:slug>/', news_detail, name='news_detail_url'),
     path('reviews/', reviews_list, name='reviews_list_url'),
     path('reviews/<str:slug>/', review_detail, name='review_detail_url'),
+    path('not_working/', not_working, name='not_working_url')
 
 ]

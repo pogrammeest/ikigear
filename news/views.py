@@ -38,3 +38,8 @@ def reviews_list(request):
 def review_detail(request, slug):
     review = get_object_or_404(Review, slug__iexact=slug)
     return render(request, 'reviews/review_detail.html', context={'review': review})
+
+
+def not_working(request):
+
+    return render(request, 'working/not_working.html')
