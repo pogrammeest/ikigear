@@ -41,5 +41,8 @@ def review_detail(request, slug):
 
 
 def not_working(request):
-
     return render(request, 'working/not_working.html')
+
+
+def ikiwinner(request):
+    return render(request, 'working/ikiwinner.html')

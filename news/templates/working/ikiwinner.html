@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block first_disp %}
+    <section  style="margin-top:4%">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 pb-4">
+                    <h1 class="text-center text-light pb-0 mb-0"> Это письмо для человека </h1>
+                     <h1 class="text-center text-light mt-0 pt-0 pb-3"> получившего Mystery Box.</h1>
+                    <h3 class="text-center text-light">  Видимо, раз ты его читаешь, ты смог разгадать небольшую загадку от программиста нашего проекта(то есть меня), с чем ikigear crew тебя с радостью и поздравляет.Этот конкурс был очень важен, ведь это новое десятилетие на которое мы строим большие планы. Надеемся продолжить радовать тебя в новом году!</h3>
+                    <h3 class="text-center text-light"> Вот маленький подарок от программиста, ключ активации игры в стиме:</h3>
+                    <h4 class="text-center text-light" style="font-weight: bold; color: #D83738 !important; text-shadow:0 0 20px #F66665;">  14203-120420100000107Iq75C621P7X1SFnpJDivKnX6zcwYO</h4>
+                    <h4 class="text-center text-light" style="font-weight: bold; color: #D83738 !important; text-shadow:0 0 20px #F66665;" > YaGK3euO3ehd1MiTT"2!Jny8bff9VcTSJk7sRDLqKRVz1XGKbMqw3G</h4>
+
+                </div>
+                <div class="col-md-8 offset-md-2 pb-4">
+                    <img style="height: 800px" src="/static/img/fir.png" alt="ёлка"/>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block search %}{% endblock %}
+{% block content %}{% endblock %}
+{% block foot %}
+    <style>
+        .op_del{
+            display: none;
+            opacity: 0;
+        }
+
+        @media only screen and (max-width: 991px) {
+            h1{
+                font-size: 2rem;
+            }
+            h3{
+                font-size: 1.5rem;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            h1{
+                font-size: 1.5rem;
+            }
+            h3{
+                font-size: 1.25rem;
+            }
+        }
+    @media only screen and (max-width: 480px) {
+        h1{
+                font-size: 1.25rem;
+            }
+            h3{
+                font-size: 1rem;
+            }
+    }
+    </style>
+{% endblock %}

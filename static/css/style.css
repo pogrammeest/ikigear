@@ -365,7 +365,7 @@ section {
         top: 15px;
         left: 20px;
         color: #fff;
-        font-size: 50px;
+        font-size: 20px;
         opacity: 0.15;
     }
 }
@@ -403,6 +403,14 @@ section {
     .last_news{
         font-size: 29px !important;
         font-weight: bold!important;;
+    }
+    .desc_mark_mini{
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        color: #fff;
+        font-size: 50px;
+        opacity: 0.15;
     }
 }
 /*Extra Small Devices, Phones*/
