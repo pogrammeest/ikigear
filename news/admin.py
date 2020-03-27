@@ -5,7 +5,7 @@ from .models import *
 
 
 class NewsAdmin(SummernoteModelAdmin):
-    summernote_fields = ('body')
+    summernote_fields = ('body',)
 
 
 admin.site.register(Post, NewsAdmin)

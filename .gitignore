@@ -127,4 +127,5 @@ dmypy.json
 .idea
 __pycache__
 
+.gitconfig
 credentials.py
