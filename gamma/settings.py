@@ -16,17 +16,13 @@ import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '49de1f5e0aae16a5143c0dcb1a3768d25999229d4527dee6'
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '49de1f5e0aae16a5143c0dcb1a3768d25999229d4527dee6')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = True #bool(os.environ.get('DEBUG_VALUE') == 'True')
+# DEBUG = True# SECURITY WARNING: don't run with debug turned on in production!
+
+DEBUG = bool(os.environ.get('DEBUG_VALUE') == 'True')
 ALLOWED_HOSTS = ['ikigear.herokuapp.com']
 
 # Application definition
