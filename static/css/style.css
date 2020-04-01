@@ -110,7 +110,6 @@ section {
     width: 300px;
     border-bottom: 25px solid #533e3c;
     border-right: 30px solid transparent;
-
 }
 
 #rectangle p {
@@ -123,16 +122,20 @@ section {
 
 .slider {
     font-size: 50px;
-    text-align: center;
     color: black;
     background-color: #FFF;
     margin: 0;
     border: 2px black solid;
     height: 100%;
-    width: 270px;
+    width: 245px;
 
 }
-
+@media only screen and (max-width: 959px) {  .slider {width: 290px;}  }
+@media only screen and (max-width: 768px) {  .slider {width: 260px;}  }
+@media only screen and (max-width: 720px) {  .slider {width: 325px;}  }
+@media only screen and (max-width: 680px) {  .slider {width: 300px;}  }
+@media only screen and (max-width: 540px) {  .slider {width: 270px;}  }
+@media only screen and (max-width: 460px) {  .slider {width: 220px;}  }
 .owl-carousel {
     padding: 0 10px;
 
@@ -413,6 +416,7 @@ section {
         font-size: 50px;
         opacity: 0.15;
     }
+
 }
 /*Extra Small Devices, Phones*/
 @media only screen and (max-width: 480px) {
