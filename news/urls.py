@@ -9,5 +9,6 @@ urlpatterns = [
     path('reviews/<str:slug>/', review_detail, name='review_detail_url'),
     path('not_working/', not_working, name='not_working_url'),
     path('ikiwinner/', ikiwinner, name="ikiwinner_url"),
+    path('callback/', call_view, name="callback_view_url"),
 
 ]

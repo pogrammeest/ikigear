@@ -1,13 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from .models import *
+
+from .API import *
 
 
 def landing(request):
     posts = Post.objects.all()
     reviews = Review.objects.all()
-    return render(request, 'news/landing.html', context={'posts': posts, 'reviews': reviews})
+    previews = Slider.objects.all()
+    return render(request, 'news/landing.html', context={'posts': posts, 'reviews': reviews, 'previews': previews})
 
 
 def news_list(request):
@@ -46,3 +49,11 @@ def not_working(request):
 
 def ikiwinner(request):
     return render(request, 'working/ikiwinner.html')
+
+
+def call_view(request):
+    data = request.GET
+    update_slider()
+    print(data)
+    print("\n", HttpResponse.status_code, "- Вышло новое видео, изменяем слайдер!\n")
+    return HttpResponse('')

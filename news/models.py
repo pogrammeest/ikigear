@@ -27,8 +27,8 @@ class Post(models.Model):
     body = models.TextField(blank=True, db_index=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    #image = models.ImageField(default='default.jpg', upload_to='post_pics')
-    image =S3DirectField(dest='post_destination')
+    # image = models.ImageField(default='default.jpg', upload_to='post_pics')
+    image = S3DirectField(dest='post_destination')
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -48,7 +48,7 @@ class Review(models.Model):
     body = models.TextField(blank=True, db_index=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    image =S3DirectField(dest='review_destination')
+    image = S3DirectField(dest='review_destination')
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -60,3 +60,8 @@ class Review(models.Model):
 
     class Meta:
         ordering = ('-date_posted',)
+
+
+class Slider(models.Model):
+    img_url = models.CharField(max_length=200, db_index=True)
+    url = models.CharField(max_length=200, db_index=True)

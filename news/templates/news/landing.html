@@ -13,21 +13,13 @@
                     <div id="rectangle">
                         <p>Наши последние видео:</p>
                     </div>
+
+
+
                     <div class="owl-carousel owl-theme" id="carousel1">
-
-                        <div><div class="slider ">Видео<p>1</p></div></div>
-                        <div><div class="slider ">Видео<p>2</p></div></div>
-                        <div><div class="slider ">Видео<p>3</p></div></div>
-                        <div><div class="slider ">Видео<p>4</p></div></div>
-                        <div><div class="slider ">Видео<p>5</p></div></div>
-                        <div><div class="slider ">Видео<p>6</p></div></div>
-                        <div><div class="slider ">Видео<p>7</p></div></div>
-                        <div><div class="slider ">Видео<p>8</p></div></div>
-                        <div><div class="slider ">Видео<p>9</p></div></div>
-                        <div><div class="slider ">Видео<p>10</p></div></div>
-                        <div><div class="slider ">Видео<p>11</p></div></div>
-                        <div><div class="slider ">Видео<p>12</p></div></div>
-
+                        {% for preview in previews %}
+                            <div><div class="slider "><a href="{{ preview.url}}"><img src="{{ preview.img_url }}" alt="видео"></a></div></div>
+                        {% endfor %}
 
                     </div>
 
