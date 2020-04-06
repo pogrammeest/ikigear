@@ -136,6 +136,8 @@ section {
 @media only screen and (max-width: 680px) {  .slider {width: 300px;}  }
 @media only screen and (max-width: 540px) {  .slider {width: 270px;}  }
 @media only screen and (max-width: 460px) {  .slider {width: 220px;}  }
+@media only screen and (max-width: 410px) {  .slider {width: 190px;}  }
+
 .owl-carousel {
     padding: 0 10px;
 
