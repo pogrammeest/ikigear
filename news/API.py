@@ -18,7 +18,7 @@ def api_slider():
     data = json.loads(json_url.read())
     for i in data['items']:
         twelve_videos_url[count] += str(i['id']['videoId'])
-        twelve_videos.append(f"https://img.youtube.com/vi/{str(i['id']['videoId'])}/maxresdefault.jpg")
+        twelve_videos.append(f"https://img.youtube.com/vi/{str(i['id']['videoId'])}/mqdefault.jpg")
         count += 1
     for i in range(12):
         temp_lst.append(twelve_videos_url[i])
