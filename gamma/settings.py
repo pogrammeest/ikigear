@@ -74,6 +74,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gamma.wsgi.application'
 
+SUMMERNOTE_THEME = 'bs4'
+
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -152,3 +154,26 @@ S3DIRECT_DESTINATIONS = {
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 django_heroku.settings(locals())
+
+SUMMERNOTE_CONFIG = {
+    'iframe': True,
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
+        'width': '90%',
+        'height': '300',
+        'toolbar': [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['misc', ['codeview']],
+        ]
+
+
+    },
+    'disable_attachment': True,
+}
+X_FRAME_OPTIONS = 'SAMEORIGIN'
